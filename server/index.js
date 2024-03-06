@@ -7,7 +7,7 @@ const {StudentModel,StudentModel1} = require('./models/Employee')
 const app =express()
 app.use(express.json())
 app.use(cors({
-    origin:"http://localhost:3001"
+    origin:"https://splendid-pavlova-4883e9.netlify.app"
 }))
 
 mongoose.connect("mongodb://localhost:27017/student-id")
