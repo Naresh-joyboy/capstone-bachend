@@ -44,7 +44,7 @@ app.get("/users",(req,res)=>{
 });
 
 app.get("/",(req,res)=>{
-    res.send({message:"poda"});
+    res.send({message:"Hello"});
 });
 
 app.post("/user",(req,res)=>{
