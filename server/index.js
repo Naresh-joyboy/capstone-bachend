@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const {StudentModel,StudentModel1} = require('./models/Employee')
 
-
+const uri = "mongodb+srv://nareshpattsss:pattss123@proect-capstone.27ea7q1.mongodb.net/?retryWrites=true&w=majority&appName=proect-capstone"
 const app =express()
 app.use(express.json())
 app.use(cors({
     origin:"https://splendid-pavlova-4883e9.netlify.app"
 }))
 
-mongoose.connect("mongodb://localhost:27017/student-id")
+mongoose.connect(uri)
 
 app.post("/login",(req,res) =>{
     const {email, password} =req.body; 
