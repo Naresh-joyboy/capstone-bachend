@@ -3,14 +3,18 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const {StudentModel,StudentModel1} = require('./models/Employee')
 
-const uri = "mongodb+srv://nareshpattsss:pattss123@proect-capstone.27ea7q1.mongodb.net/?retryWrites=true&w=majority&appName=proect-capstone"
+ 
 const app =express()
 app.use(express.json())
 app.use(cors({
-    origin:"https://splendid-pavlova-4883e9.netlify.app"
-}))
+    origin:"http://localhost:5173"
+}));
 
-mongoose.connect(uri)
+mongoose.connect("mongodb://localhost:27017")
+  .then(() => {
+    console.log("connected to database");
+  })
+  .catch((error) => console.log(error,"connect error"));
 
 app.post("/login",(req,res) =>{
     const {email, password} =req.body; 
@@ -55,6 +59,6 @@ app.post("/user",(req,res)=>{
 });
 
 
-app.listen(3001,() =>{
+app.listen(5000,() =>{
     console.log('server is running')
 })
